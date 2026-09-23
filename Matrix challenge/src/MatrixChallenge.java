@@ -8,23 +8,24 @@ public class MatrixChallenge
 				int small = myArray [0][0];
 				int biiig = myArray [0][0];
 				double average = 0;
-				int number = 0;
-					for (int row = 0; row > myArray.length; row++) 
+				double number = 0;
+				int sum = 0;
+					for (int row = 0; row < myArray.length; row++) 
 						{
-							for (int column = 0; column > myArray[0].length; column++) 
+							for (int column = 0; column < myArray[row].length; column++) 
 								{
 									if (myArray [row][column] > biiig) 
 										{
-											myArray [row][column] = biiig;
+											biiig = myArray [row][column];
 										}
 									else if (myArray [row][column] < small) 
 										{
-											myArray [row][column] = small;
+										small =	myArray [row][column];
 										}
-									average += myArray[row][column];
+									sum += myArray[row][column];
 									number++;
 								}
-							average /= number;
+							average = sum / number;
 						}
 System.out.println("The average number is " + average + ".");
 System.out.println("The biggest number is " + biiig + ".");
